@@ -280,18 +280,22 @@
         </div>
     </section>
 
-    <section class="slide white">
-        <img class="place top left" src="vendors/shower-ribbon/pictures/square.png" alt="">
-        <img class="place top" src="vendors/shower-ribbon/pictures/square.png" alt="">
-        <img class="place top right" src="vendors/shower-ribbon/pictures/square.png" alt="">
+    <section class="slide compact">
+        <h2>WebSQL API</h2>
 
-        <img class="place left" src="vendors/shower-ribbon/pictures/square.png" alt="">
-        <img class="place" src="vendors/shower-ribbon/pictures/square.png" alt="">
-        <img class="place right" src="vendors/shower-ribbon/pictures/square.png" alt="">
+        <pre style="font-size: 20px;" class="language-javascript line-numbers">
+            <code>
+                const size = 5*1024*1024
+                const db = window.openDatabase("name", "1.0", "description", size)
 
-        <img class="place bottom left" src="vendors/shower-ribbon/pictures/square.png" alt="">
-        <img class="place bottom" src="vendors/shower-ribbon/pictures/square.png" alt="">
-        <img class="place bottom right" src="vendors/shower-ribbon/pictures/square.png" alt="">
+                db.executeSql('SELECT * FROM users', onSuccess, onError)
+
+                db.transaction(tx => {
+                    tx.executeSql('INSERT INTO users(name) VALUES(?)', ['Pete'])
+                    tx.executeSql('INSERT INTO users(name) VALUES(?)', ['Paul'])
+                }, onTransactionError, onTransactionSuccess)
+            </code>
+        </pre>
     </section>
 
     <section class="slide" data-timing="00:03">
