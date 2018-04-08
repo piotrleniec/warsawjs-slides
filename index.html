@@ -248,11 +248,24 @@
         </div>
     </section>
 
-    <section class="slide">
-        <figure>
-            <img class="cover" src="vendors/shower-ribbon/pictures/exact.png" alt="">
-            <figcaption class="white">Copyright © 2016 <a href="">Yours Truly</a>, Famous Inc.</figcaption>
-        </figure>
+    <section class="slide compact">
+        <h2>Co przechowywać w Storage</h2>
+
+        <ul>
+            <li>Stan interfejsu</li>
+            <li>Wartości formularzy (logowanie się, GitHub)</li>
+            <li>Tokeny używane przez JS (JWT, api tokens)</li>
+        </ul>
+    </section>
+
+    <section class="slide compact">
+        <h2>Czego nie przechowywać w DOM Storage</h2>
+
+        <ul>
+            <li>Kolekcje danych</li>
+            <li>Rzeczy które są potrzebne w Web albo Service Workerze</li>
+            <li>Bloby</li>
+        </ul>
     </section>
 
     <section class="slide">
