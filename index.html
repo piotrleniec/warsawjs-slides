@@ -173,53 +173,79 @@
         </div>
     </section>
 
-    <section class="slide prism">
-        <h2>Listing Slide</h2>
+    <section class="slide compact">
+        <h2>Local Storage & Session Storage</h2>
 
-        <pre style="font-size: 45px;" class="language-javascript line-numbers">
-            <code>
-                function wrap(value) {
-                    return function () {
-                        return value;
-                    }
-                }
-
-                function bind(monad, f) {
-                    return f(monad());
-                }
-            </code>
-        </pre>
+        <ul>
+            <li>Każda przeglądarka ma swój limit (2MB, 5MB, 10MB)</li>
+            <li>Local Storage przechowuje dane aż do usunięcia (nie ma terminu wygaśnięcia)</li>
+            <li>Session Storage przechowuje dane przechowuje dane na czas trwania sesji (aż do zamknięcia taba)</li>
+            <li>Local Storage i Session Storage mają taki sam interfejs</li>
+        </ul>
     </section>
 
     <section class="slide prism">
+        <h2>DOM Storage API</h2>
+
         <pre style="font-size: 30px;" class="language-javascript line-numbers">
             <code>
-                var monad = wrap('cookie');
-                bind(monad, (value) => {
-                    console.info(value);
-                    return wrap(value);
-                });
-                monad = bind(monad, (value) => {
-                    return wrap({ type: value });
-                });
-                bind(monad, (value) => {
-                    console.log(value);
-                    return wrap(value);
-                });
+                localStorage.setItem('a', 'b')
+                localStorage.getItem('a') // 'b'
+
+                localStorage.removeItem('a')
+                localStorage.getItem('a') // null
             </code>
         </pre>
     </section>
 
-    <section class="slide">
-        <h2 class="shout"><a href="">Linked</a> Shout</h2>
+    <section class="slide prism">
+        <h2>DOM Storage API</h2>
+
+        <pre style="font-size: 30px;" class="language-javascript line-numbers">
+            <code>
+                localStorage.a = 'b'
+                localStorage.a // 'b'
+
+                delete localStorage.a
+                localStorage.a // undefined
+            </code>
+        </pre>
     </section>
 
-    <section class="slide">
-        <h2 class="shout grow">Effect: Growing Shout</h2>
+    <section class="slide prism">
+        <h2>DOM Storage API</h2>
+
+        <pre style="font-size: 30px;" class="language-javascript line-numbers">
+            <code>
+                const object = { a: 1, b: 2, c: 3 }
+                localStorage.setItem('object', object)
+
+                localStorage.getItem('object') // "[object Object]"
+            </code>
+        </pre>
     </section>
 
-    <section class="slide">
-        <h2 class="shout shrink">Effect: Shrinking Shout</h2>
+    <section class="slide prism">
+        <h2>DOM Storage API</h2>
+
+        <pre style="font-size: 30px;" class="language-javascript line-numbers">
+            <code>
+                let object = { a: 1, b: 2, c: 3 }
+                let objectString = JSON.stringify(object)
+                localStorage.setItem('object', objectString)
+
+                objectString = localStorage.getItem('object')
+                JSON.parse(objectString) // { a: 1, b: 2, c: 3 }
+            </code>
+        </pre>
+    </section>
+
+    <section class="slide compact">
+        <h2>Wsparcie DOM Storage</h2>
+
+        <div style="text-align: center;">
+            <img src="pictures/webstoragesupport.png" width="850" />
+        </div>
     </section>
 
     <section class="slide">
