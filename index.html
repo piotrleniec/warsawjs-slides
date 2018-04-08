@@ -298,12 +298,73 @@
         </pre>
     </section>
 
-    <section class="slide" data-timing="00:03">
-        <h3 class="shout">Automatic switch slide after <strong>3 secs</strong> ...</h3>
+    <section class="slide compact">
+        <h2>IndexedDB</h2>
+
+        <div style="text-align: center;">
+            <img src="pictures/database.png" />
+        </div>
     </section>
 
-    <section class="slide">
-        <h3 class="shout">See you next month at WarsawJS</h3>
+    <section class="slide compact">
+        <h2>IndexedDB API</h2>
+
+        <pre style="font-size: 20px;" class="language-javascript line-numbers">
+            <code>
+                const open = indexedDB.open('dbname', 3)
+                open.onupgradeneeded = (event) => {
+                    if (event.oldVersion < 1) {
+                        // create v1 schema
+                    }
+                    if (event.oldVersion < 2) {
+                        // upgrade v1 to v2 schema
+                    }
+                }
+            </code>
+        </pre>
+    </section>
+
+    <section class="slide compact">
+        <h2>IndexedDB API</h2>
+
+        <pre style="font-size: 20px;" class="language-javascript line-numbers">
+            <code>
+                const tx = db.transaction(['Users'], 'readwrite')
+                const store = tx.objectStore('Users')
+
+                store.put({ id: 1, name: 'John Doe' })
+                store.put({ id: 2, name: 'Jane Doe' })
+            </code>
+        </pre>
+    </section>
+
+    <section class="slide compact">
+        <h2>IndexedDB API</h2>
+
+        <pre style="font-size: 20px;" class="language-javascript line-numbers">
+            <code>
+                const tx = db.transaction(['Users'], 'readonly')
+                const store = tx.objectStore('Users')
+
+                const getJohn = store.get(1)
+                getJohn.onsuccess = () => {
+                    getJohn.result // { id: 1, name: 'John Doe' }
+                }
+            </code>
+        </pre>
+    </section>
+
+    <section class="slide compact">
+        <h2>IndexedDB API</h2>
+
+        <pre style="font-size: 20px;" class="language-javascript line-numbers">
+            <code>
+                const tx = db.transaction(['Users'], 'readwrite')
+                const store = tx.objectStore('Users')
+
+                store.delete(1)
+            </code>
+        </pre>
     </section>
 
     <div class="progress"></div>
