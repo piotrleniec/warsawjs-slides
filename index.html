@@ -51,13 +51,12 @@
         <ul>
             <li>Vice President of Engineering w Spark Solutions</li>
             <ul>
-                <li>Development</li>
+                <li>Development - Ruby & JavaScript</li>
                 <li>Rekrutacja</li>
                 <li>Pomoc</li>
                 <li>Zarządzanie projektami</li>
             </ul>
-            <li>Full Stack Developer (Ruby, JavaScript)</li>
-            <li><a href="https://leniec.com" target="_blank" rel="noopener">leniec.com</a></li>
+            <li><a href="https://leniec.com/" target="_blank" rel="noopener">leniec.com</a></li>
         </ul>
     </section>
 
@@ -88,54 +87,14 @@
         </pre>
     </section>
 
-    <section class="slide prism">
-        <h2>HTTP Cookies API</h2>
-
-        <pre style="font-size: 30px;" class="language-html line-numbers">
-            <code>
-                GET /sample_page.html HTTP/1.1
-                Host: www.example.org
-                Cookie: a=1; b=2; c=3
-            </code>
-        </pre>
-    </section>
-
-    <section class="slide prism">
-        <h2>HTTP Cookies API</h2>
-
-        <pre style="font-size: 30px;" class="language-html line-numbers">
-            <code>
-                HTTP/1.0 200 OK
-                Content-type: text/html
-                Set-Cookie: d=4
-
-                [page content]
-            </code>
-        </pre>
-    </section>
-
-    <section class="slide prism">
-        <h2>HTTP Cookies API</h2>
-
-        <pre style="font-size: 30px;" class="language-html line-numbers">
-            <code>
-                HTTP/1.0 200 OK
-                Content-type: text/html
-                Set-Cookie: b=; expires=Thu, 01 Jan 1970 00:00:00 GMT
-
-                [page content]
-            </code>
-        </pre>
-    </section>
-
     <section class="slide compact">
         <h2>Problemy z ciastkami</h2>
 
         <ul>
             <li>Beznadziejne API</li>
+            <li>Są wysyłane do serwera z każdym żądaniem</li>
             <li>Luki bezpieczeństwa (CSRF, XSS)</li>
             <li>Limity (4kb)</li>
-            <li>Są wysyłane do serwera z każdym żądaniem</li>
         </ul>
 
         <img src="pictures/badcookie.png" width="150" />
@@ -177,10 +136,10 @@
         <h2>Local Storage & Session Storage</h2>
 
         <ul>
-            <li>Każda przeglądarka ma swój limit (2MB, 5MB, 10MB)</li>
+            <li>Local Storage i Session Storage mają taki sam interfejs</li>
             <li>Local Storage przechowuje dane aż do usunięcia (nie ma terminu wygaśnięcia)</li>
             <li>Session Storage przechowuje dane przechowuje dane na czas trwania sesji (aż do zamknięcia taba)</li>
-            <li>Local Storage i Session Storage mają taki sam interfejs</li>
+            <li>Każda przeglądarka ma swój limit (2MB, 5MB, 10MB)</li>
         </ul>
     </section>
 
@@ -388,6 +347,10 @@
 
     <section class="slide compact">
         <h2>Pytania?</h2>
+
+        <div style="text-align: center;">
+            <img src="pictures/anyquestions.gif" />
+        </div>
     </section>
 
     <div class="progress"></div>
